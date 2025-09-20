@@ -51,10 +51,11 @@ export const fetchNotes = async ({
     params,
     headers: getAuthHeader(),
   });
+
   return data;
 };
 
-// Отримання нотатки за ID (залишаємо лише одну функцію)
+// Отримання нотатки за ID
 export const fetchNoteById = async (id: string | number): Promise<Note> => {
   const { data } = await api.get<Note>(`/${id}`, {
     headers: getAuthHeader(),
